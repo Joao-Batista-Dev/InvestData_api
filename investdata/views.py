@@ -18,10 +18,20 @@ class StockPriceApiViewset(views.APIView):
         )
     
     def get(self, request):
-        stocks = Stocks.objects.all()
+        stock_name = request.query_params.get('stock_name')
+        
+        if stock_name:
+            stocks = Stocks.objects.filter(
+                name=stock_name
+            )
+        else:
+            stocks = Stocks.objects.all()
 
         return response.Response(
-            data=StockSerializers(stocks, many=True).data,
+            data=StockSerializers(
+                stocks, 
+                many=True
+            ).data,
             status=status.HTTP_200_OK,
         )
 
