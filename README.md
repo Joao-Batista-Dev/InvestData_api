@@ -1,6 +1,6 @@
-# InvestData
+# InvestData API
 
-Bem-vindo ao Sistema InvestData. Projeto que faz buscar automaticamente dos valores de ações na bolsa de valores.
+Bem-vindo ao Sistema InvestData. API do Projeto que faz buscar automaticamente dos valores de ações na bolsa de valores.
 
 ## 🛠 Tecnologias
 - Python 3.11
