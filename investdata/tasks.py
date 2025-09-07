@@ -1,7 +1,9 @@
 from celery import shared_task, group
 from investdata.models import Stocks
-import yfinance as yf
+import yfinance as yf # biblioteca da api do Yohoo Finance
 
+
+# tarefa pra pegar os valores das ações da Yohoo Finance
 @shared_task
 def get_stock_price_task(stock_name):
     stock = yf.Ticker(stock_name + ".SA")
@@ -14,6 +16,8 @@ def get_stock_price_task(stock_name):
 
     return float(price)
 
+
+# Tarefa que buscar uma lista de 100 ações
 @shared_task
 def fetch_all_stocks_task():
     stocks_list = [
