@@ -2,6 +2,7 @@ from rest_framework import views, response, status
 from investdata.models import Stocks
 from investdata.serializers import StockSerializers
 from investdata.tasks import get_stock_price_task
+from datetime import datetime, timedelta
 
 class StockPriceApiViewset(views.APIView):
     def post(self, request):
@@ -16,6 +17,7 @@ class StockPriceApiViewset(views.APIView):
             },
             status=status.HTTP_200_OK,
         )
+    
     
     def get(self, request):
         stock_name = request.query_params.get('stock_name')
