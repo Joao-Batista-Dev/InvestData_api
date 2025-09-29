@@ -1,10 +1,13 @@
 from rest_framework import views, response, status
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from investdata.models import Stocks
 from investdata.serializers import StockSerializers
 from investdata.tasks import get_stock_price_task
 from datetime import datetime, timedelta
 
 class StockPriceApiViewset(views.APIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     def post(self, request):
         stock_name = request.data.get('stock_name')
 
