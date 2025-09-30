@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'investdata',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
+        'NAME': 'invest_db_3tck',
+        'USER': 'admin',
+        'PASSWORD': '2cQ50tc4KPbqVJhFSTBoxEiLlLWKUZ67',
+        'HOST': 'dpg-d3dhoeb7mgec73cskce0-a.oregon-postgres.render.com',
         'PORT': 5432,
     }
 }
